@@ -3,18 +3,18 @@ import math
 from fractions import Fraction
 side = input("Number of sides? ")
 length = input("Length of the side? ")
+#Length of each sides
+L = int(length)
+#Number of sides
+S = int(side)
 def power(value):
-    new_value = value ** 2
-    return new_value
-A = power(int(length))
-B = int(A) * int(side)
-C = 180/int(side)
+    return value ** 2
 def trig(value):
-    new_value = math.tan(math.radians(value))
-    return new_value
-D = trig(C)
-E = D * 4
-F = B/E
-print("The area is " + str(F))
+    return math.tan(math.radians(value))
+#n = Regular Polygon Area Formula
+def n(value):
+    return ((power(L) * S) / (4 * trig(180/(S))))
+A = n(1)
+print('The area of this ' + str(S) + " side polygon is "  + str(A))
 
-#made by "Keith"
+# Made by "Keith"
